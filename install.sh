@@ -9,9 +9,9 @@ CADDYIndexPage=${CADDYIndexPage:-https://codeload.github.com/ripienaar/free-for-
 wget "https://caddyserver.com/api/download?os=linux&arch=amd64" -O caddy
 wget "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" -O xray-linux-64.zip
 unzip -o xray-linux-64.zip && rm -rf xray-linux-64.zip
-chmod +x caddy xray && mv caddy xray -t /usr/bin/
+chmod +x caddy xray startvrush && mv caddy xray startvrush -t /usr/bin/
 mv geoip.dat  geosite.dat -t /usr/bin/
-chmod +x startvrush
+
 # set caddy
 mkdir -p /etc/caddy/ /usr/share/caddy
 echo -e "User-agent: *\nDisallow: /" > /usr/share/caddy/robots.txt
