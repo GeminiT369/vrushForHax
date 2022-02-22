@@ -36,7 +36,7 @@ startvrush
 ```
 
 ### 客户端
-* **务必替换所有的`xxx.railway.app`为railway分配的项目域名**  
+* **务必按照提示填写自己的域名或IP**  
 * **务必替换所有的`24b4b1e1-7a89-45f6-858c-242cf53b5bdb`为部署时设置的UUID,建议更改,不要每个人都一样**  
 
 **XRay 将在部署时会自动实配安装`最新版本`。**
@@ -92,11 +92,13 @@ startvrush
 
 ```bash
 * 客户端下载：https://github.com/shadowsocks/shadowsocks-windows/releases/
-* 服务器地址: 此处填写自己的域名
+* 服务器地址: 此处填写自己的域名 或 CF优选IP
 * 端口: 443
 * 密码：24b4b1e1-7a89-45f6-858c-242cf53b5bdb
 * 加密：chacha20-ietf-poly1305
-* 插件程序：xray-plugin_windows_amd64.exe  //需将插件https://github.com/shadowsocks/xray-plugin/releases下载解压后放至shadowsocks同目录
+* 插件程序：xray-plugin_windows_amd64.exe
+     # 需将插件https://github.com/shadowsocks/xray-plugin/releases下载解压后放至shadowsocks同目录
+     # sagerNet等app需要启用v2ray插件
 * 插件选项: tls;host=此处填写自己的域名;path=/24b4b1e1-7a89-45f6-858c-242cf53b5bdb-ss
 ```
 </details>
