@@ -1,7 +1,7 @@
 #!/bin/bash
-# set val
+# 在此处自定义配置
 PORT=${PORT:-443}
-AUUID=${AUUID:-5194845a-cacf-4515-8ea5-fa13a91b1026}
+AUUID=${AUUID:-24b4b1e1-7a89-45f6-858c-242cf53b5bdb}
 ParameterSSENCYPT=${ParameterSSENCYPT:-chacha20-ietf-poly1305}
 CADDYIndexPage=${CADDYIndexPage:-https://codeload.github.com/ripienaar/free-for-dev/zip/master}
 
