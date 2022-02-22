@@ -32,7 +32,13 @@ git clone https://github.com/GeminiT369/vrushForHax.git && cd vrushForHax && bas
 ```
 > 启动
 ```bash
+# 测试，Ctrl + C 退出
 startvrush
+# screen启动，Ctrl + A + D （先A后D）切换至后台
+screen -S vrush startvrush
+# 恢复会话
+screen -r vrush
+# 停止：恢复后Ctrl + C 停止
 ```
 
 ### 客户端
