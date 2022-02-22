@@ -49,15 +49,16 @@ startvrush
 ```bash
 * 客户端下载：https://github.com/2dust/v2rayN/releases
 * 代理协议：vless 或 vmess
-* 地址：此处填写自己的域名
+* 地址：此处填写自己的域名 或 CF优选IP
 * 端口：443
 * 默认UUID：24b4b1e1-7a89-45f6-858c-242cf53b5bdb
 * vmess额外id：0
 * 加密：none
 * 传输协议：ws
 * 伪装类型：none
-* 伪装域名：xxx.workers.dev(CF Workers反代地址)
-* 路径：/24b4b1e1-7a89-45f6-858c-242cf53b5bdb-vless // 默认vless使用(/自定义UUID码-vless)，vmess使用(/自定义UUID码-vmess)
+* 伪装域名：此处填写自己的域名
+* 路径：/24b4b1e1-7a89-45f6-858c-242cf53b5bdb-vless   # vless使用（/UUID-vless）
+       或 /24b4b1e1-7a89-45f6-858c-242cf53b5bdb-vmess   # vmess使用（/UUID-vmess）
 * 底层传输安全：tls
 * 跳过证书验证：false
 ```
@@ -72,7 +73,7 @@ startvrush
     "run_type": "client",
     "local_addr": "127.0.0.1",
     "local_port": 1080,
-    "remote_addr": "此处填写自己的域名",
+    "remote_addr": "此处填写自己的域名 或 CF优选IP",
     "remote_port": 443,
     "password": [
         "24b4b1e1-7a89-45f6-858c-242cf53b5bdb"
@@ -80,7 +81,7 @@ startvrush
     "websocket": {
         "enabled": true,
         "path": "/24b4b1e1-7a89-45f6-858c-242cf53b5bdb-trojan",
-        "host": "xxx.herokuapp.com"
+        "host": "此处填写自己的域名"
     }
 }
 ```
@@ -96,7 +97,7 @@ startvrush
 * 密码：24b4b1e1-7a89-45f6-858c-242cf53b5bdb
 * 加密：chacha20-ietf-poly1305
 * 插件程序：xray-plugin_windows_amd64.exe  //需将插件https://github.com/shadowsocks/xray-plugin/releases下载解压后放至shadowsocks同目录
-* 插件选项: tls;host=xxx.herokuapp.com;path=/24b4b1e1-7a89-45f6-858c-242cf53b5bdb-ss
+* 插件选项: tls;host=此处填写自己的域名;path=/24b4b1e1-7a89-45f6-858c-242cf53b5bdb-ss
 ```
 </details>
 
@@ -104,17 +105,19 @@ startvrush
 <summary>可以使用Cloudflare的Workers来中转流量，（支持VLESS\VMESS\Trojan-Go的WS模式）配置为：</summary>
 
 ```js
-const SingleDay = 'xxx.up.railway.app'
-const DoubleDay = 'xxx.up.railway.app'
+const serverList = [
+    '地址1',
+    '地址2',
+    ...
+    ...
+];
+
 addEventListener(
     "fetch",event => {
     
         let nd = new Date();
-        if (nd.getDate()%2) {
-            host = SingleDay
-        } else {
-            host = DoubleDay
-        }
+
+        let host = serverList[nd.getDate()%serverList.length]
         
         let url=new URL(event.request.url);
         url.hostname=host;
