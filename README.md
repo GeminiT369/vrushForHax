@@ -11,11 +11,19 @@ vless 性能更加优秀，占用资源更少。
 * 支持tor网络，且可通过自定义网络配置文件启动xray和caddy来按需配置各种功能  
 * 支持存储自定义文件,目录及账号密码均为UUID,客户端务必使用TLS连接  
 
+## 开始之前
 
+* 需要准备一个域名
+* 需要准备tls证书和密钥，如果使用cloudflare代理，可以直接在cloudflare生成
+* 可配置项写在install.sh 文件开头，注意环境变量优先于设置值，可配置选项：
+  - PORT：服务监听端口
+  - AUUID：用户ID，最好生成自己的
+  - ParameterSSENCYPT：SS加密方式
+  - CADDYIndexPage：显示的web网页
 
 ### 服务端
 
-* 启用了TLS，默认绑定443端口，请先在 etc/Caddyfile 中指定 tls 证书和密钥，推荐使用cloudflare
+* 启用了TLS，默认绑定443端口，请先在 Caddyfile 中指定 tls 证书和密钥，推荐使用cloudflare
 * 默认 tls 证书路径：/root/.cert/cert.pem ； 密钥路径：/root/.cert/key.pem
 
 > 安装
@@ -41,7 +49,7 @@ startvrush
 ```bash
 * 客户端下载：https://github.com/2dust/v2rayN/releases
 * 代理协议：vless 或 vmess
-* 地址：xxx.herokuapp.com
+* 地址：此处填写自己的域名
 * 端口：443
 * 默认UUID：24b4b1e1-7a89-45f6-858c-242cf53b5bdb
 * vmess额外id：0
@@ -64,7 +72,7 @@ startvrush
     "run_type": "client",
     "local_addr": "127.0.0.1",
     "local_port": 1080,
-    "remote_addr": "xxx.herokuapp.com",
+    "remote_addr": "此处填写自己的域名",
     "remote_port": 443,
     "password": [
         "24b4b1e1-7a89-45f6-858c-242cf53b5bdb"
@@ -83,7 +91,7 @@ startvrush
 
 ```bash
 * 客户端下载：https://github.com/shadowsocks/shadowsocks-windows/releases/
-* 服务器地址: xxx.herokuapp.com
+* 服务器地址: 此处填写自己的域名
 * 端口: 443
 * 密码：24b4b1e1-7a89-45f6-858c-242cf53b5bdb
 * 加密：chacha20-ietf-poly1305
