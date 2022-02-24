@@ -44,7 +44,7 @@ export CADDYIndexPage=https://codeload.github.com/ripienaar/free-for-dev/zip/mas
 ```
 ### 安装
 ```bash
-git clone https://github.com/GeminiT369/vrushForHax.git && cd vrushForHax && bash install.sh
+git clone https://github.com/GeminiT369/vrushForHax.git && cd vrushForHax && sh install.sh
 ```
 ### 启动
 - 测试
