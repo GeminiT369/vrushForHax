@@ -1,0 +1,14 @@
+[Unit]
+Description=Caddy Server
+After=syslog.target
+After=network.target
+
+[Service]
+User=root
+Group=root
+LimitNOFILE=64000
+ExecStart=/usr/bin/caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
