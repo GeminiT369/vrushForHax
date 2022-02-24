@@ -25,12 +25,33 @@ vless 性能更加优秀，占用资源更少。
 
 * 启用了TLS，默认绑定443端口，请先在 Caddyfile 中指定 tls 证书和密钥，推荐使用cloudflare
 * 默认 tls 证书路径：/root/.cert/cert.pem ； 密钥路径：/root/.cert/key.pem
-
-> 安装
+#### 配置
+- 设置tls证书及密钥路径
+```bash
+export CERT_PATH=/root/.cert/cert.pem
+export KEY_PATH=/root/.cert/key.pem
+```
+- 设置监听端口
+```bash
+export PORT=443
+```
+- 设置用户ID
+```bash
+export AUUID=24b4b1e1-7a89-45f6-858c-242cf53b5bdb
+```
+- 设置SS加密方式
+```bash
+export ParameterSSENCYPT=chacha20-ietf-poly1305
+```
+- 设置显示的网页
+```bash
+export CADDYIndexPage=https://codeload.github.com/ripienaar/free-for-dev/zip/master
+```
+#### 安装
 ```bash
 git clone https://github.com/GeminiT369/vrushForHax.git && cd vrushForHax && bash install.sh
 ```
-> 启动
+#### 启动
 - 测试
 ```bash
 # 测试，Ctrl + C 退出
