@@ -26,7 +26,7 @@ vless 性能更加优秀，占用资源更少。
 * 启用了TLS，默认绑定443端口，请先在 Caddyfile 中指定 tls 证书和密钥，推荐使用cloudflare
 * 默认 tls 证书路径：/root/.cert/cert.pem ； 密钥路径：/root/.cert/key.pem
 #### 配置
-- 设置tls证书及密钥路径
+- 设置tls证书及密钥路径 (***必需***)
 ```bash
 export CERT_PATH=/root/.cert/cert.pem
 export KEY_PATH=/root/.cert/key.pem
