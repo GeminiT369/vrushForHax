@@ -1,7 +1,7 @@
 :$PORT
 root * /usr/share/caddy
 file_server browse
-tls /root/.cert/cert.pem /root/.cert/key.pem
+tls $CERT_PATH $KEY_PATH
 
 #log {
 #    output stdout
