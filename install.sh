@@ -21,7 +21,7 @@ wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/cadd
 
 
 # set config file
-cat Caddyfile | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" -e "s/\$CERT_PATH/$CERT_PATH/g" -e "s/\$KEY_PATH/$KEY_PATH/g" -e "s/\$MYUUID-HASH/$(caddy hash-password --plaintext $AUUID)/g" > /etc/caddy/Caddyfile
+cat Caddyfile | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" -e "s#\$CERT_PATH#$CERT_PATH#g" -e "s#\$KEY_PATH#$KEY_PATH#g" -e "s/\$MYUUID-HASH/$(caddy hash-password --plaintext $AUUID)/g" > /etc/caddy/Caddyfile
 cat config.json | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$ParameterSSENCYPT/g" > /etc/xray/xray.json
 
 # add service
