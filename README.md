@@ -15,11 +15,6 @@ vless 性能更加优秀，占用资源更少。
 
 * 需要准备一个域名
 * 需要准备tls证书和密钥，如果使用cloudflare代理，可以直接在cloudflare生成
-* 可配置项写在install.sh 文件开头，注意环境变量优先于设置值，可配置选项：
-  - PORT：服务监听端口
-  - AUUID：用户ID，最好生成自己的
-  - ParameterSSENCYPT：SS加密方式
-  - CADDYIndexPage：显示的web网页
 
 ### 服务端
 
