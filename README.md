@@ -31,14 +31,23 @@ vless 性能更加优秀，占用资源更少。
 git clone https://github.com/GeminiT369/vrushForHax.git && cd vrushForHax && bash install.sh
 ```
 > 启动
+- 测试
 ```bash
 # 测试，Ctrl + C 退出
 startvrush
+```
+- screen
+```bash
 # screen启动，Ctrl + A + D （先A后D）切换至后台
 screen -S vrush startvrush
 # 恢复会话
 screen -r vrush
 # 停止：恢复后Ctrl + C 停止
+```
+- 启动服务
+```bash
+systemctl start xray
+systemctl start caddy
 ```
 
 ### 客户端
