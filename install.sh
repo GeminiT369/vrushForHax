@@ -5,7 +5,7 @@ AUUID=${AUUID:-24b4b1e1-7a89-45f6-858c-242cf53b5bdb}
 ParameterSSENCYPT=${ParameterSSENCYPT:-chacha20-ietf-poly1305}
 CADDYIndexPage=${CADDYIndexPage:-https://codeload.github.com/ripienaar/free-for-dev/zip/master}
 CERT_PATH=${CERT_PATH:-/root/.cert/cert.pem}
-KEY_PATH=${CERT_PATH:-/root/.cert/key.pem}
+KEY_PATH=${KEY_PATH:-/root/.cert/key.pem}
 
 # download execution
 wget "https://caddyserver.com/api/download?os=linux&arch=amd64" -O caddy
