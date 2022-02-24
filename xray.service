@@ -1,0 +1,13 @@
+[Unit]
+Description=Xray Server
+After=syslog.target
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/bin/xray -config /etc/xray/xray.json
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
