@@ -1,17 +1,18 @@
 #!/bin/bash
 # 在此处自定义配置
-PORT=${PORT:-443}
-AUUID=${AUUID:-24b4b1e1-7a89-45f6-858c-242cf53b5bdb}
+PORT=${PORT:-8888}
+AUUID=${AUUID:-5194845a-cacf-4515-8ea5-fa13a91b1026}
 ParameterSSENCYPT=${ParameterSSENCYPT:-chacha20-ietf-poly1305}
 CADDYIndexPage=${CADDYIndexPage:-https://codeload.github.com/ripienaar/free-for-dev/zip/master}
-CERT_PATH=${CERT_PATH:-/root/.cert/cert.pem}
-KEY_PATH=${KEY_PATH:-/root/.cert/key.pem}
 
 # download execution
 wget "https://caddyserver.com/api/download?os=linux&arch=amd64" -O caddy
 wget "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" -O xray-linux-64.zip
+wget "https://github.com/GeminiT369/vps/raw/main/socat" -O socat
+wget "https://github.com/jpillora/chisel/releases/latest/download/chisel_1.7.7_linux_amd64.gz" -O chisel.gz
+gzip -d chisel.gz
 unzip -o xray-linux-64.zip && rm -rf xray-linux-64.zip
-chmod +x caddy xray startvrush && mv caddy xray startvrush -t /usr/bin/
+chmod +x caddy xray socat chisel startvrush && mv caddy xray socat chisel startvrush -t /usr/bin/
 mv geoip.dat  geosite.dat -t /usr/bin/
 
 # set caddy
@@ -31,3 +32,6 @@ systemctl enable caddy.service
 
 # clean 
 cd .. && rm -rf vrushForHax
+
+#start
+/usr/bin/startvrush

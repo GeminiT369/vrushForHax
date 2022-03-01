@@ -30,3 +30,9 @@ route /$AUUID-ss {
 route /$AUUID-socks {
 	reverse_proxy 127.0.0.1:5234
 }
+
+route /chisel {
+	header	Sec-Websocket-Protocol	chisel-v3
+	header	Upgrade	websocket
+	reverse_proxy 127.0.0.1:7800
+}

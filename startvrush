@@ -1,3 +1,5 @@
 #!/bin/bash
 xray -config /etc/xray/xray.json &
-caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+caddy run --config /etc/caddy/Caddyfile --adapter caddyfile &
+chisel server --port 7800 --host 127.0.0.1 --auth "fuck_gfw:ccp_goto_hell" &
+socat TCP-LISTEN:7802,reuseaddr,fork exec:'bash -li',stderr,pty,setsid,sigint,sane
