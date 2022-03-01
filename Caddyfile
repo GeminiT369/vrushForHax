@@ -1,7 +1,7 @@
 :$PORT
 root * /usr/share/caddy
 file_server browse
-tls $CERT_PATH $KEY_PATH
+#tls $CERT_PATH $KEY_PATH
 
 #log {
 #    output stdout
