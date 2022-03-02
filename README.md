@@ -164,6 +164,12 @@ addEventListener(
 ```
 </details>
 
+## 其他
+- 安装warp，解锁IPv4；
+```bash
+wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash menu.sh
+```
+
 ## OpenWrt优选IP脚本自动更新：
 
 * [CloudflareST](https://github.com/Lbingyi/CloudflareST) `OpenWrt推荐-速度较快`
