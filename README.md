@@ -18,7 +18,7 @@ vless 性能更加优秀，占用资源更少。
 
 ## 服务端
 
-* 启用了TLS，默认绑定443端口，请先在 Caddyfile 中指定 tls 证书和密钥，推荐使用cloudflare
+* 启用了TLS，默认绑定443端口，必须指定 tls 证书和密钥
 * 默认 tls 证书路径：/root/.cert/cert.pem ； 密钥路径：/root/.cert/key.pem
 > 申请TLS证书，可参考这篇博客：[ACME申请证书](https://wuzhu.ga/2022/02/26/tong-guo-acme-shen-qing-tls-zheng-shu/)。
 > 本项目使用的web站点根路径为：/usr/share/caddy
