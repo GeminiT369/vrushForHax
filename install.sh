@@ -28,6 +28,3 @@ cat config.json | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$Paramet
 mv xray.service caddy.service -t /lib/systemd/system/
 systemctl enable xray.service
 systemctl enable caddy.service
-
-# clean 
-cd .. && rm -rf vrushForHax
