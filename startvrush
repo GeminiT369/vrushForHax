@@ -1,3 +1,5 @@
 #!/bin/bash
+kill -9 `pgrep xray`
+kill -9 `pgrep caddy`
 xray -config /etc/xray/xray.json &
 caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
