@@ -1,5 +1,5 @@
 [Unit]
-Description=Xray Server
+Description=Xray Service
 After=syslog.target
 After=network.target
 
