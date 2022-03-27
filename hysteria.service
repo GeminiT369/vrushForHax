@@ -1,5 +1,5 @@
 [Unit]
-Description=Hysteria Server
+Description=Hysteria Service
 After=syslog.target
 After=network.target
 
