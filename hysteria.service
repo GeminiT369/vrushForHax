@@ -1,0 +1,13 @@
+[Unit]
+Description=Hysteria Server
+After=syslog.target
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/bin/hysteria server -c /etc/hysteria/server.json
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
