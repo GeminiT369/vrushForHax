@@ -9,9 +9,10 @@ KEY_PATH=${KEY_PATH:-/root/.cert/key.pem}
 
 # download execution
 wget "https://caddyserver.com/api/download?os=linux&arch=amd64" -O caddy
+wget "https://github.com/HyNetwork/hysteria/releases/latest/download/hysteria-tun-linux-amd64" -O hysteria
 wget "https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip" -O xray-linux-64.zip
 unzip -o xray-linux-64.zip && rm -rf xray-linux-64.zip
-chmod +x caddy xray startvrush && mv caddy xray startvrush -t /usr/bin/
+chmod +x caddy xray hysteria startvrush && mv caddy xray hysteria startvrush -t /usr/bin/
 mv geoip.dat  geosite.dat -t /usr/bin/
 
 # set caddy
