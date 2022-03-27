@@ -1,0 +1,19 @@
+{
+        "listen": ":2053",
+        "protocol": "udp",
+        "cert": "$CERT_PATH",
+        "key": "$KEY_PATH",
+        "obfs": "fuck_gfw",
+        "alpn": "h3",
+        "auth": {
+                "mode": "passwords",
+                "config": [
+                        "fuck_gfw",
+                        "fuck_ccp"
+                ]
+        },
+        "up_mbps": 50,
+        "down_mbps": 300,
+        "recv_window": 209715200,
+        "recv_window_conn": 52428800
+}
