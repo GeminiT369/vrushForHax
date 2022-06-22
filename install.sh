@@ -7,6 +7,8 @@ CADDYIndexPage=${CADDYIndexPage:-https://codeload.github.com/ripienaar/free-for-
 CERT_PATH=${CERT_PATH:-/root/.cert/cert.pem}
 KEY_PATH=${KEY_PATH:-/root/.cert/key.pem}
 
+apt install -y wget unzip screen
+
 # download execution
 wget "https://caddyserver.com/api/download?os=linux&arch=amd64" -O caddy
 wget "https://github.com/HyNetwork/hysteria/releases/latest/download/hysteria-tun-linux-amd64" -O hysteria
